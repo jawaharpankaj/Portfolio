@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Portfolio.css" type="text/css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 20px;
+        }
+        .bio-section, .contact-section {
+            margin-bottom: 40px;
+        }
+        .map {
+            width: 100%;
+            height: 300px;
+        }
+    </style>
+</head>
+<body style="background-image: url(pexels-goumbik-1420701.jpg);">
+    <div class="container">
+        <!-- Bio Section -->
+        <section class="bio-section">
+            <h1>Jawahar Pankaj</h1> <hr>
+            <h3>Professional Summary</h3> <hr>
+                <p>I am a seasoned Project Manager with a strong foundation in the Training and Technology industry. With a BTech degree in Computer Science Engineering (CSE),<br> I have successfully led and managed diverse projects, ensuring the delivery of high-quality solutions that meet business objectives. My role demands not only <br> technical expertise but also strong leadership, strategic planning, and client relationship management, all of which I excel in.</p> <hr>
+            <h3>Skills and Expertise</h3> <hr>
+                <ul>
+                
+                        <li>Project Management</li>
+                        <li>Technology Integration</li>
+                        <li>Client Relationship Management</li>
+                        <li>Team Leadership</li>
+                        <li>Strategic Planning and Execution</li>
+                        <li>Risk Management</li>
+                
+                </ul> <hr>
+
+            <h3>Education</h3> <hr>
+            <ul> <li>Bachelor of Technology (BTech) in Computer Science Engineering</li>
+               <li>CUSAT-2011-2015</li>
+            </ul> <hr>
+
+            <h3>Passions and Interests</h3> <hr>
+            <p>Beyond my professional endeavors, I am deeply passionate about music. Singing and composing music are not just hobbies but integral <br> parts of who I am.  I run an online institute where I share my expertise as a vocal trainer, conducting classes in various parts of the world. <br>
+
+                I am an avid traveler with a love for exploring new places and trying out different cuisines. These adventures allow me to unwind and gain new perspectives, <br> enriching both my personal and professional life. Currently, I am planning to move abroad to further advance my career and explore new opportunities.</p> <hr>
+            <h3>Contact Information</h3> <hr>
+            <ul><li>Phone: 8129190001</li>
+            <li>Email:jawaharpankajj@gmail.com</li> </ul>
+             <hr>
+       
+
+             <h3>Connect me in </h3> <hr>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" class="btn btn-primary" style="background-color: rgb(34, 146, 215);">LinkedIn</a></li>
+                <li class="list-inline-item"><a href="#" class="btn btn-dark" style="background-color: rgb(42, 109, 190);">Facebook</a></li>
+                <li class="list-inline-item"><a href="#" class="btn btn-info" style="background-color: #fff;">X</a></li>
+            </ul>
+        </section>
+    <hr>
+
+        <!-- Map Section -->
+        <section class="map-section">
+            <h2>Location</h2>
+            <div class="map" id="map"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <h4>Inquiry Form</h4>
+            <form id="inquiry-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" class="form-control" id="state" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <textarea class="form-control" id="address" rows="4" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="city" class="form-label">City:
+                        <select id="country" name="color">
+                            <option value="australia">Australia</option>
+                            <option value="india">India</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </label>
+                
+                   
+                </div>
+                <div class="mb-3">
+                    <label for="state" class="form-label">State:
+                        <select id="country" name="color">
+                            <option value="australia">Australia</option>
+                            <option value="india">India</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </label>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-label">Country
+                        <select id="country" name="color">
+                            <option value="australia">Australia</option>
+                            <option value="india">India</option>
+                            <option value="usa">USA</option>
+                        </select>
+                    </label>
+                    
+                </div>
+                <div class="mb-3">
+                    <label for="pin" class="form-label">Pin</label>
+                    <input type="text" class="form-control" id="state" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message me</label>
+                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+    <script>
+        // Initialize and add the map
+        function initMap() {
+            var location = {lat: -34.397, lng: 150.644}; // Change this to your location
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+
+        // Submit form to Google Sheets
+        const form = document.getElementById('inquiry-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+
+            const message = document.getElementById('message').value;
+
+            // Send form data to Google Sheets
+            fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                method: 'POST',
+                body: JSON.stringify({name, email, message}),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert('Form submitted successfully!');
+                form.reset();
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>
